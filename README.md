@@ -4,6 +4,11 @@ An SCP:SL NWAPI plugin which lets you persistently toggle your staff tag using t
 
 ## Installation
 
+### Using package manager
+
+Use `p install KarlOfDuty/ToggleTag` in your server console and restart it.
+
+### Manual
 Place the plugin and dependencies directory in your server's plugin directory.
 
 The plugin has no config, it starts automatically.
