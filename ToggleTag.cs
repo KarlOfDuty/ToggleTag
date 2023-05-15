@@ -27,7 +27,7 @@ namespace ToggleTag
         "    \"tags\": []\n"  +
         "}";
 
-        public const string VERSION = "1.2.0";
+        public const string VERSION = "1.2.1";
 
         [PluginEntryPoint("SCPDiscord", VERSION, "Enables persistant toggling of tags.", "Karl Essinger")]
         public void OnEnable()
