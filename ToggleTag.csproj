@@ -39,16 +39,16 @@
       <HintPath>.scpsl_libs\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="CommandSystem.Core">
-      <HintPath>..\.scpsl_libs\CommandSystem.Core.dll</HintPath>
+      <HintPath>.scpsl_libs\CommandSystem.Core.dll</HintPath>
     </Reference>
     <Reference Include="Mirror">
-      <HintPath>..\.scpsl_libs\Mirror.dll</HintPath>
+      <HintPath>.scpsl_libs\Mirror.dll</HintPath>
     </Reference>
     <Reference Include="Mirror.Components">
-      <HintPath>..\.scpsl_libs\Mirror.Components.dll</HintPath>
+      <HintPath>.scpsl_libs\Mirror.Components.dll</HintPath>
     </Reference>
     <Reference Include="PluginAPI">
-      <HintPath>..\.scpsl_libs\PluginAPI.dll</HintPath>
+      <HintPath>.scpsl_libs\PluginAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,10 +57,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>..\.scpsl_libs\UnityEngine.dll</HintPath>
+      <HintPath>.scpsl_libs\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\.scpsl_libs\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>.scpsl_libs\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
