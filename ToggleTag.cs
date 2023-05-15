@@ -47,7 +47,7 @@ namespace ToggleTag
 
         public static string GetConfigPath()
         {
-            return Paths.GlobalPlugins.Plugins + "/toggletag.json";
+            return Paths.LocalPlugins.Plugins + "/toggletag.json";
         }
 
         public static void SaveTagsToFile()
