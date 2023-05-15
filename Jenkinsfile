@@ -3,6 +3,8 @@ pipeline {
   stages {
     stage('Dependencies') {
       steps {
+        sh 'steamcmd +force_install_dir \$HOME/scpsl +login anonymous +app_update 996560 -beta public-beta validate +quit'
+	    sh 'ln -s "\$HOME/scpsl/SCPSL_Data/Managed" ".scpsl_libs"'
         sh 'nuget restore ToggleTag.sln'
       }
     }
