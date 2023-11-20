@@ -27,7 +27,7 @@ namespace ToggleTag
         "    \"tags\": []\n"  +
         "}";
 
-        public const string VERSION = "1.2.1";
+        public const string VERSION = "1.2.2";
 
         [PluginEntryPoint("ToggleTag", VERSION, "Enables persistant toggling of tags.", "Karl Essinger")]
         public void OnEnable()
@@ -71,21 +71,20 @@ namespace ToggleTag
         {
             if(tagsToggled.Contains(player.UserId))
             {
-                player.ReferenceHub.characterClassManager.CmdRequestHideTag();
+                player.ReferenceHub.serverRoles.TryHideTag();
             }
             else
             {
-                player.ReferenceHub.characterClassManager.CmdRequestShowTag(false);
+                player.ReferenceHub.serverRoles.RefreshLocalTag();
             }
         }
 
-        [PluginEvent(ServerEventType.RemoteAdminCommandExecuted)]
-        public void OnAdminQuery(ICommandSender sender, string command, string[] args, bool result, string response)
+        public void OnAdminQuery(RemoteAdminCommandExecutedEvent ev)
         {
-            if (!(sender is PlayerCommandSender playerSender) || Player.Get(playerSender.ReferenceHub) == null) return;
+            if (!(ev.Sender is PlayerCommandSender playerSender) || Player.Get(playerSender.ReferenceHub) == null) return;
 
             Player player = Player.Get(playerSender.ReferenceHub);
-            switch (command)
+            switch (ev.Command)
             {
                 case "hidetag":
                     tagsToggled.Add(player.UserId);
@@ -115,14 +114,13 @@ namespace ToggleTag
                 bool wasVisible = ToggleTag.tagsToggled.Add(arguments.At(0));
 
                 Player player = Player.GetPlayers().FirstOrDefault(x => x.UserId == arguments.At(0));
-
                 if (player == null)
                 {
                     response = "Could not find a player by that user ID.";
                     return false;
                 }
 
-                player?.ReferenceHub.characterClassManager.CmdRequestHideTag();
+                player.ReferenceHub.serverRoles.TryHideTag();
                 if (wasVisible)
                 {
                     response = "Tag hidden of " + player.DisplayNickname + ".";
@@ -154,14 +152,13 @@ namespace ToggleTag
                 bool wasHidden = ToggleTag.tagsToggled.Remove(arguments.At(0));
 
                 Player player = Player.GetPlayers().FirstOrDefault(x => x.UserId == arguments.At(0));
-
                 if (player == null)
                 {
                     response = "Could not find a player by that user ID.";
                     return false;
                 }
 
-                player.ReferenceHub.characterClassManager.CmdRequestShowTag(false);
+                player.ReferenceHub.serverRoles.RefreshLocalTag();
                 if (wasHidden)
                 {
                     response = "Tag revealed of " + player.DisplayNickname + ".";
