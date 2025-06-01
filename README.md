@@ -1,5 +1,8 @@
 # ToggleTag [![Build Status](https://jenkins.karlofduty.com/job/NWAPI/job/ToggleTag/job/master/badge/icon)](https://jenkins.karlofduty.com/blue/organizations/jenkins/NWAPI%2FToggleTag/activity) [![Release](https://img.shields.io/github/release/KarlofDuty/ToggleTag.svg)](https://github.com/KarlOfDuty/ToggleTag/releases) [![Downloads](https://img.shields.io/github/downloads/KarlOfDuty/ToggleTag/total.svg)](https://github.com/KarlOfDuty/ToggleTag/releases) [![Discord Server](https://img.shields.io/discord/430468637183442945.svg?label=discord)](https://discord.gg/C5qMvkj)
 
+
+## No longer maintained, I stopped using it myself and I don't know if anyone else really used it.
+
 An SCP:SL NWAPI plugin which lets you persistently toggle your staff tag using the default `hidetag` and `showtag` commands. You have to use the RA console, not the local one.
 
 ## Installation
